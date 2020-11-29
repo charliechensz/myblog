@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个页面</title>
+    <link rel="stylesheet" href="/static/css/mystyle.css">
+    <script src="/static/js/vue.js"></script>
+    <script src="/static/js/axios.js"></script>
+</head>
+
+
+
+<body>
+    <div id="home">
+        <div class="header" >
+            <h1>
+                {{ siteinfo.title }} 
+            </h1>
+            <img src="/upload/{{siteinfo.logo}} " alt="">
+        </div>
+
+        <hr /> 
+        <div class="content">
+            <div class="menu">
+                <div class="item">
+                    <span>Django后端</span>
+                </div>  
+                <div class="item">
+                    <span>VueJs前端</span>
+                </div>  
+                <div class="item">
+                    <span>实战博客</span>
+                </div>  
+                <div class="item">
+                    <span>部署项目</span>
+                </div>  
+            </div>
+            <div class="userlist">
+                 
+            </div>
+        </div>
+        <hr/>
+        <hr/>
+        <div class="footer">
+            Copyright @2020 FoxTech
+        </div>
+    </div>
+    
+    <script>
+
+    </script>
+</body> 
+</html>

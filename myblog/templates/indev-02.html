@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个页面</title>
+    <link rel="stylesheet" href="/static/css/mystyle.css">
+    <script src="/static/js/vue.js"></script>
+    <script src="/static/js/axios.js"></script>
+
+    <!DOCTYPE 备注... html>
+
+</head>
+
+<body>
+    <div id="home">
+        <div class="header" >
+            <h1>
+                {{ siteinfo.title }} 
+                <! {{ siteinfo_title }} >
+            </h1>
+        </div>
+        <img src="/upload/{{siteinfo.logo}} " alt="">
+        <hr/>
+        <p v-if="movies.length==0">尚未获取</p>
+        <div class='imglist'>
+            <img v-for='img0 in movies' v-bind:src="apiurl+img0.pic" alt="">
+
+        </div>
+        <button v-on:click="getData()">获取视频</button>
+    </div>
+<script>
+    new Vue({
+        // this 作用域
+        el:'#home',
+        data:{
+            apiurl:'https://api.dweb.club/',
+            movies:[] 
+        },
+        methods:{
+            getData(){
+                var self = this  // this 才能起作用
+                axios({
+                    method:'get',
+                    type:'json',
+                    url:'https://api.dweb.club/dweb-api/get-index-data',
+                }).then(function(res){
+                    console.log(res.data.newsdata) 
+                    self.movies = res.data.newsdata
+                })
+
+                // console.log('开始获取...')
+            }
+        }
+    })
+</script>
+</body> 
+</html>

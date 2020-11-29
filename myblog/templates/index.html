@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie's myblog</title>
+    <link rel="stylesheet" href="/static/css/mystyle.css">
+    <script src="/static/js/vue.js"></script>
+    <script src="/static/js/axios.js"></script>
+</head>
+
+<body>
+    <div id="home">
+        <div class="header" >
+            <h1>
+                {{ siteinfo.title }} 
+            </h1>
+            <img src="/upload/{{siteinfo.logo}}" alt="">
+        
+        </div>
+
+        <hr /> 
+        <div class="content">
+            <div class="menu">
+                {% for class in classes %}
+                <div class="item">
+                    <!-- <span>{{ class.text }}</span> -->
+                    <a href="/classes/?id={{ class.id }}"> {{class.text}} </a>
+                </div>  
+                {% endfor %}
+            </div>
+            <div class="userlist">
+                <p>全部用户、Logo和在读课程</p>
+                <hr>
+                {% for user in userlist %}
+                <div class="user">
+                    <!-- <img src="/upload/{{siteinfo.logo}}" alt=""> -->
+                    <img src="/upload/{{user.headImg}}" alt="">
+                    <p>{{user.nickName}} </p>
+                    <p>{{ user.belong}} </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <hr/>
+        <hr/>
+        <div class="footer">
+            Copyright @2020 FoxTech
+        </div>
+    </div>
+    
+    <script>
+
+    </script>
+</body> 
+</html>

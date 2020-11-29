@@ -1,0 +1,51 @@
+#home {
+    width: 710px;
+    height: auto;
+    border: 1px solid #001;
+    margin: 0 auto;
+    text-align: center;
+}
+#home img {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+}
+#home .imglist img{
+    width: 120px;
+    height: 120px;
+    /* border-radius: 10px; */
+}   
+
+#home .header {
+    background: #00000070;
+}
+#home .header h1 {
+    color: #fff; 
+}
+
+#home .content .menu {
+    display: flex;
+    /* align-content: center; */
+    padding: 10px 20px 10px;    
+    /*上、左右\、下的边距  */
+}
+#home .content .menu .item {
+    width: 25%;
+    /* margin-right: 5px;  */
+    border: 1px solid ;
+    height: 40px;
+    line-height: 40px;
+}
+#home .content .userlist {
+    min-width: 700px;  /* 最少的宽度 */ 
+    min-height: 500px; /* 最少高度 */ 
+    padding-top: 20px;   /* 上部的边距 */ 
+    height: auto;
+    border:5px solid #f7050511;
+    float: left;
+}
+#home .content .userlist .user {
+    float:left;
+    margin-left:20px;
+    width: 20%;
+}

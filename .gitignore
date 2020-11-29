@@ -1,0 +1,4 @@
+/venv
+/myblog/migrations
+/myblog/__pycache__
+mysite/__pycache__
