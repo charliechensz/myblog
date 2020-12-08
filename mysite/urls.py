@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 # set to myblog views 
-from myblog import views,api 
+from myblog import views,api,apisp 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,8 @@ urlpatterns = [
     path('classes/',views.classes),
 
     # apt interface test
-    path('api/',api.api_test)
+    path('api/',  api.api_test  ),
+    path('apisp/',apisp.api_test)
 ] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
  
